@@ -1,3 +1,24 @@
 .container{
-    margin: 0 200px;
+    padding-left: 200px;
 }
+.btn-success {
+    background-color: #2CA489;
+}
+
+.btn-warning {
+    background-color: #ECB712;
+}
+
+.btn-danger {
+    background-color: #AC162C;
+}
+
+th {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/*
+#2CA489-zelena
+#AC162C-crvena
+#ECB712-zuta
+*/

@@ -1,12 +1,44 @@
 <app-dashboard-menu></app-dashboard-menu>
 
 <div class="container">
-        <div class="form-group" *ngIf='error!=""'>
-                <div class="alert alert-danger" role="alert">{{error}}</div>
-              </div>
-    <ul class="users">
-        <li *ngFor="let user of users">
-            <span class="badge">{{user.username}}</span>
-        </li>
-    </ul>
+    <div class="form-group" *ngIf='error!=""'>
+        <div class="alert alert-danger" role="alert">{{error}}</div>
+    </div>
+
+
+    <table class="table table-striped text-center">
+        <thead>
+            <tr class="text-center">
+                <th>Korisničko ime</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>E-mail</th>
+                <th>Rola</th>
+                <th>Opcije</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.username}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.role}}</td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span>
+                            Zgrade
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Uredi
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            Izbriši
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
