@@ -1,0 +1,24 @@
+<div class="navbar navbar-inverse navbar-left">
+    <a class="navbar-brand" href="#"><img src="../../assets/gf-logo-white.png"/></a>
+    <hr id="top">
+    <ul class="nav">
+      <li><a routerLink="/dashboard"><i class="glyphicon glyphicon-dashboard"></i>Početna</a></li>
+      <li><a routerLink="/dashboard/users"><i class="glyphicon glyphicon-user"></i>Korisnici</a></li>
+      <li><a routerLink="/dashboard/buildings"><i class="glyphicon glyphicon-list-alt"></i>Zgrade</a></li>
+      <li  data-toggle="collapse" data-target="#multichoice_data" class="collapsed active">
+          <a style="cursor:pointer"><i class="glyphicon glyphicon-th-list"></i>Podaci za odabir<span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="multichoice_data">
+            <li><a routerLink="/dashboard/construction-systems">Konstrukcijski sustavi</a></li>
+            <li><a routerLink="/dashboard/roofs">Krovovi</a></li>
+            <li><a routerLink="/dashboard/materials">Materijali zidova</a></li>
+            <li><a routerLink="/dashboard/purposes">Namjene</a></li>
+            <li><a routerLink="/dashboard/positions">Pozicije</a></li>
+            <li><a routerLink="/dashboard/sectors">Sektori</a></li>
+            <li><a routerLink="/dashboard/ceilings">Strop</a></li>
+        </ul>     
+    </ul>
+    <hr id="bottom">
+  </div>
+
+

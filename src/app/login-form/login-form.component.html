@@ -1,3 +1,17 @@
-<p>
-  login-form works!
-</p>
+
+<div class="jumbotron text-center">
+  <img class="img-responsive" src="assets/nekretnine_logo.png" alt="GFOS logo" style="margin:0 auto;">
+  <div class="container">
+    <h2>Prijava</h2>
+    <hr>
+    <form (submit)="loginUser($event)" [formGroup]="loginForm">
+      <input class="form-control" type="text" name="username" formControlName="username" placeholder="Korisničko ime">
+      <input class="form-control" type="password" formControlName="password" placeholder="Lozinka" name="password">
+      <div class="form-group" *ngIf='error!=""'>
+        <div class="alert alert-danger" role="alert">{{error}}</div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-md">Prijavi se</button>
+    </form>
+  </div>
+</div>
+

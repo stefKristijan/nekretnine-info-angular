@@ -1,0 +1,12 @@
+<app-dashboard-menu></app-dashboard-menu>
+
+<div class="container">
+        <div class="form-group" *ngIf='error!=""'>
+                <div class="alert alert-danger" role="alert">{{error}}</div>
+              </div>
+    <ul class="users">
+        <li *ngFor="let building of buildings">
+            <span class="badge">{{building.uId}}</span>
+        </li>
+    </ul>
+</div>
