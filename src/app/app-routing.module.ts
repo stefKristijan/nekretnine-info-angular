@@ -11,25 +11,45 @@ import { PositionsComponent } from '../app/multichoice-components/positions/posi
 import { PurposesComponent } from '../app/multichoice-components/purposes/purposes.component';
 import { RoofsComponent } from '../app/multichoice-components/roofs/roofs.component';
 import { SectorsComponent } from '../app/multichoice-components/sectors/sectors.component';
-
+import { AuthenticationGuard } from '../app/authentication.guard';
+import { UserDetailComponent } from '../app/user-detail/user-detail.component';
+import { BuildingDetailComponent } from '../app/building-detail/building-detail.component';
 
 export const routes: Routes = [
   {
     path:'dashboard',
-    component: DashboardComponent
+    canActivate:[AuthenticationGuard],
+    component: DashboardComponent,
   },
   {path:'login', component: LoginFormComponent},
-  { path: '', redirectTo: 'login',  pathMatch: 'full' },
-  { path:'dashboard/buildings', component: BuildingsComponent },
-  { path:'dashboard/users', component: UsersComponent },
-  { path:'dashboard/ceilings', component: CeilingMaterialsComponent},
-  { path:'dashboard/construction-systems', component: ConstructionSystemsComponent},
-  { path:'dashboard/materials', component: MaterialsComponent},
-  { path:'dashboard/positions', component: PositionsComponent},
-  { path:'dashboard/purposes', component: PurposesComponent},
-  { path:'dashboard/roofs', component: RoofsComponent},
-  { path:'dashboard/sectors', component: SectorsComponent}
-  
+  { path: '', redirectTo:'dashboard',  pathMatch: 'full' },
+  { 
+    path:'buildings',
+    component: BuildingsComponent,
+    children:[
+      { path:':id', component:BuildingDetailComponent}
+    ] 
+  },
+  { 
+    path:'users', 
+    component: UsersComponent,
+    children:[
+      { 
+        path:':username', 
+        component:UserDetailComponent, 
+        children:[
+          { path:'buildings', component:BuildingsComponent}
+        ]
+      }
+    ] 
+  },
+  { path:'ceilings', component: CeilingMaterialsComponent},
+  { path:'construction-systems', component: ConstructionSystemsComponent},
+  { path:'materials', component: MaterialsComponent},
+  { path:'positions', component: PositionsComponent},
+  { path:'purposes', component: PurposesComponent},
+  { path:'roofs', component: RoofsComponent},
+  { path:'sectors', component: SectorsComponent}
 ];
 
 @NgModule({

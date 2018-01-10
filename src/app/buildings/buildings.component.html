@@ -6,7 +6,13 @@
               </div>
     <ul class="buildings">
         <li *ngFor="let building of buildings">
-            <span class="badge">{{building.uId}}</span>
+            <span >{{building.uId}}</span>
+            <ul>
+                <li *ngFor="let location of building.locations">
+                    <span class="badge">{{location.street}}</span>
+                </li>
+            </ul>
+            
         </li>
     </ul>
 </div>

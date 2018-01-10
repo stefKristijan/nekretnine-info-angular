@@ -15,11 +15,17 @@ export class UserService {
 
   private userUrl = 'http://localhost:8080/login';
   private usersUrl = 'http://localhost:8080/admin/users';
+  private deleteUrl = 'http://localhost:8080/users/'
 
   constructor(
     private http: HttpClient,
     private globalService: GlobalService
   ) { }
+
+
+  private httpOptions = {
+  headers: new HttpHeaders({ 'Authorization': 'Basic '+btoa(this.globalService.user.username+":"+this.globalService.password) })
+ };
 
   login(username:string, password:string):Observable<User>{
     console.log(username+" "+password);
@@ -38,10 +44,13 @@ export class UserService {
   }
 
   getUsers():Observable<User[]>{
-    let header = new HttpHeaders();
-    const body=JSON.stringify({username: this.globalService.user.username, password:this.globalService.password});
-    header = header.append("Authorization","Basic "+btoa(this.globalService.user.username+":"+this.globalService.password));
-    return this.http.get<User[]>(this.usersUrl, {headers:header});
+    return this.http.get<User[]>(this.usersUrl, this.httpOptions);
+  }
+
+  deleteUser(username:string):Observable<any>{
+    this.deleteUrl+=username;
+    console.log(this.deleteUrl);
+    return this.http.delete(this.deleteUrl, this.httpOptions);
   }
 
 }

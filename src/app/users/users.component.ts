@@ -23,6 +23,15 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  deleteUser(user:User):void{
+    this.userService.deleteUser(user.username).subscribe(( response:string)=>
+      this.users = this.users.filter(delUser => delUser!==user)
+    ,(error:HttpErrorResponse)=>{
+      this.error=error.error.message;
+    });
+   
+  }
+
   ngOnInit() {
     this.getUsers();
   }

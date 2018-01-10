@@ -20,7 +20,9 @@ import { PositionsComponent } from './multichoice-components/positions/positions
 import { PurposesComponent } from './multichoice-components/purposes/purposes.component';
 import { RoofsComponent } from './multichoice-components/roofs/roofs.component';
 import { SectorsComponent } from './multichoice-components/sectors/sectors.component';
-
+import { AuthenticationGuard } from './authentication.guard';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { BuildingDetailComponent } from './building-detail/building-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { SectorsComponent } from './multichoice-components/sectors/sectors.compo
     PurposesComponent,
     RoofsComponent,
     SectorsComponent,
+    UserDetailComponent,
+    BuildingDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ import { SectorsComponent } from './multichoice-components/sectors/sectors.compo
     FormsModule,
     AppRoutingModule
   ],
-  providers: [UserService, GlobalService, BuildingService],
+  providers: [UserService, GlobalService, BuildingService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

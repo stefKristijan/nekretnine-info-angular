@@ -29,4 +29,15 @@ export class GlobalService {
         this._user = v;
     }
 
+    public isUserLoggedIn():boolean{
+        return this.user!=null;
+    }
+
+    public logout():void{
+        this.user=null;
+        this.password=null;
+        localStorage.removeItem("user");
+        localStorage.removeItem("password");
+    }
+
 }

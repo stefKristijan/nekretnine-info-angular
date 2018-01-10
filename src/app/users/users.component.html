@@ -5,6 +5,7 @@
         <div class="alert alert-danger" role="alert">{{error}}</div>
     </div>
 
+    <router-outlet></router-outlet>
 
     <table class="table table-striped text-center">
         <thead>
@@ -26,14 +27,14 @@
                 <td>{{user.role}}</td>
                 <td>
                     <button type="button" class="btn btn-success btn-sm">
-                            <span class="glyphicon glyphicon-th-list"></span>
+                            <span class="glyphicon glyphicon-list-alt"></span>
                             Zgrade
                     </button>
-                    <button type="button" class="btn btn-warning btn-sm">
+                    <button type="button" class="btn btn-warning btn-sm" routerLink="/users/{{user.username}}">
                             <span class="glyphicon glyphicon-pencil"></span>
                             Uredi
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user)">
                             <span class="glyphicon glyphicon-trash"></span>
                             Izbriši
                     </button>

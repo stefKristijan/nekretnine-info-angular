@@ -2,21 +2,22 @@
     <a class="navbar-brand" href="#"><img src="../../assets/gf-logo-white.png"/></a>
     <hr id="top">
     <ul class="nav">
-      <li><a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="glyphicon glyphicon-dashboard"></i>Početna</a></li>
-      <li><a routerLink="/dashboard/users" routerLinkActive="active"><i class="glyphicon glyphicon-user"></i>Korisnici</a></li>
-      <li><a routerLink="/dashboard/buildings" routerLinkActive="active"><i class="glyphicon glyphicon-list-alt"></i>Zgrade</a></li>
+      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="glyphicon glyphicon-dashboard"></i>Početna</a></li>
+      <li><a routerLink="/users" routerLinkActive="active"><i class="glyphicon glyphicon-user"></i>Korisnici</a></li>
+      <li><a routerLink="/buildings" routerLinkActive="active"><i class="glyphicon glyphicon-list-alt"></i>Zgrade</a></li>
       <li  data-toggle="collapse" data-target="#multichoice_data" class="collapsed active">
           <a style="cursor:pointer"><i class="glyphicon glyphicon-th-list"></i>Podaci za odabir<span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="multichoice_data">
-            <li><a routerLink="/dashboard/construction-systems" routerLinkActive="active">Konstrukcijski sustavi</a></li>
-            <li><a routerLink="/dashboard/roofs"routerLinkActive="active">Krovovi</a></li>
-            <li><a routerLink="/dashboard/materials" routerLinkActive="active">Materijali zidova</a></li>
-            <li><a routerLink="/dashboard/purposes" routerLinkActive="active">Namjene</a></li>
-            <li><a routerLink="/dashboard/positions" routerLinkActive="active">Pozicije</a></li>
-            <li><a routerLink="/dashboard/sectors" routerLinkActive="active">Sektori</a></li>
-            <li><a routerLink="/dashboard/ceilings" routerLinkActive="active">Strop</a></li>
-        </ul>     
+            <li><a routerLink="/construction-systems" routerLinkActive="active">Konstrukcijski sustavi</a></li>
+            <li><a routerLink="/roofs"routerLinkActive="active">Krovovi</a></li>
+            <li><a routerLink="/materials" routerLinkActive="active">Materijali zidova</a></li>
+            <li><a routerLink="/purposes" routerLinkActive="active">Namjene</a></li>
+            <li><a routerLink="/positions" routerLinkActive="active">Pozicije</a></li>
+            <li><a routerLink="/sectors" routerLinkActive="active">Sektori</a></li>
+            <li><a routerLink="/ceilings" routerLinkActive="active">Strop</a></li>
+        </ul>
+        <li><a (click)="logout()" style="cursor:pointer"><i class="glyphicon glyphicon-log-out"></i>Odjavi se</a></li>
     </ul>
     <hr id="bottom">
   </div>
