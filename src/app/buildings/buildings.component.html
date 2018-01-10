@@ -7,11 +7,9 @@
     <ul class="buildings">
         <li *ngFor="let building of buildings">
             <span >{{building.uId}}</span>
-            <ul>
-                <li *ngFor="let location of building.locations">
-                    <span class="badge">{{location.street}}</span>
-                </li>
-            </ul>
+            <div *ngFor="let imagePath of building.imagePaths" class="images">
+                <img src="http://localhost:8080/{{imagePath.path}}"/>
+            </div>
             
         </li>
     </ul>
