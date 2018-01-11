@@ -21,7 +21,10 @@ export class BuildingsComponent implements OnInit {
 
    getBuildings():void{
     this.error="";
-    this.buildingService.getAllBuildings().subscribe((buildings => this.buildings=buildings),
+    this.buildingService.getAllBuildings().subscribe((buildings => {
+      this.buildings=buildings;
+      console.log(buildings);
+    }),
     (error: HttpErrorResponse)=>{
       this.error=error.error.message;
     });

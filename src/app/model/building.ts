@@ -28,6 +28,7 @@ export class Building{
     width:number;
     length:number;
     brutoArea:number;
+    netoArea:number;
     residentialBrutoArea:number;
     businessBrutoArea:number;
     basementBrutoArea:number;
@@ -36,5 +37,7 @@ export class Building{
     numberOfFloors:number;
     numberOfFlats:number;
     properGroundPlan:boolean;
-    
+    maintenanceGrade:string;
+    companyInBuilding:string;
+    numberOfResidents:number;
 }

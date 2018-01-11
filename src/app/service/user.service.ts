@@ -23,10 +23,6 @@ export class UserService {
   ) { }
 
 
-  private httpOptions = {
-  headers: new HttpHeaders({ 'Authorization': 'Basic '+btoa(this.globalService.user.username+":"+this.globalService.password) })
- };
-
   login(username:string, password:string):Observable<User>{
     console.log(username+" "+password);
     let formData = new FormData();
@@ -44,13 +40,19 @@ export class UserService {
   }
 
   getUsers():Observable<User[]>{
-    return this.http.get<User[]>(this.usersUrl, this.httpOptions);
+    let httpOptions = {
+  headers: new HttpHeaders({ 'Authorization': 'Basic '+btoa(this.globalService.user.username+":"+this.globalService.password) })
+ };
+    return this.http.get<User[]>(this.usersUrl, httpOptions);
   }
 
   deleteUser(username:string):Observable<any>{
+    let httpOptions = {
+  headers: new HttpHeaders({ 'Authorization': 'Basic '+btoa(this.globalService.user.username+":"+this.globalService.password) })
+ };
     this.deleteUrl+=username;
     console.log(this.deleteUrl);
-    return this.http.delete(this.deleteUrl, this.httpOptions);
+    return this.http.delete(this.deleteUrl, httpOptions);
   }
 
 }

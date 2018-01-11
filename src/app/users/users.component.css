@@ -15,7 +15,19 @@
 
 th {
     text-align: center;
+    color: black;
 }
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+tr {
+    font-weight: bold;
+    color: #2CA489;
+}
+
+
 
 /*
 #2CA489-zelena

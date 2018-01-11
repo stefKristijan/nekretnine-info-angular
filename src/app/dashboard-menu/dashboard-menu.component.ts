@@ -14,6 +14,7 @@ export class DashboardMenuComponent implements OnInit {
   public logout() {
     this.globalService.logout();
     this.router.navigate(['/']);
+    console.log(this.globalService.user);
 }
 
   ngOnInit() {

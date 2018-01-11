@@ -10,3 +10,33 @@ img{
 .images{
     display: inline-block;
 }
+
+.btn-success {
+    background-color: #2CA489;
+}
+
+.btn-warning {
+    background-color: #ECB712;
+}
+
+.btn-danger {
+    background-color: #AC162C;
+}
+
+th {
+    text-align: center;
+    color: black;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+tr {
+    color: #2CA489;
+    font-weight: bold;
+}
+
+.glyphicon {
+    margin-right: 5px;
+}

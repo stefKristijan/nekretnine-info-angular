@@ -4,13 +4,38 @@
         <div class="form-group" *ngIf='error!=""'>
                 <div class="alert alert-danger" role="alert">{{error}}</div>
               </div>
-    <ul class="buildings">
-        <li *ngFor="let building of buildings">
-            <span >{{building.uId}}</span>
-            <div *ngFor="let imagePath of building.imagePaths" class="images">
-                <img src="http://localhost:8080/{{imagePath.path}}"/>
-            </div>
-            
-        </li>
-    </ul>
+    <table class="table table-striped text-center table-hover">
+        <thead>
+            <tr class="text-center">
+                <th></th>
+                <th>Katastar</th>
+                <th>Ulica</th>
+                <th>Kućni broj</th>
+                <th>Opcije</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let building of buildings">
+                <td><img src="http://localhost:8080/{{building.imagePaths[0].path}}"/></td>
+                <td><p *ngFor="let location of building.locations">{{location.cadastralMunicipality}} - {{location.cadastralParticle}}<br></p></td>
+                <td>{{building.locations[0].street}}</td>
+                <td><p *ngFor="let location of building.locations">{{location.streetNumber}}{{location.streetChar}}<br></p></td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            Detalji
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Uredi
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            Izbriši
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+

@@ -7,4 +7,7 @@ export class BuildingLocation{
     state:string;
     cadastralParticle:string;
     buildingId:number;
+    cityDistrict:string;
+    settlement:string;
+    cadastralMunicipality:string
 }
